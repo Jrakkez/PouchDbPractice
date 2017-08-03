@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="//cdn.jsdelivr.net/pouchdb/latest/pouchdb.js"></script>
+        <link rel="stylesheet" href="../styles/style.css">
+
+        <title>Pouchy</title>
+    </head>
+
+    <body>
+		<div id="pouchy">
+			<h1>{{ header }}</h1>
+
+			<h5>{{ whatToDo }}</h5>
+
+			<input v-model="name" placeholder="Full Name">
+
+			<button @click="addToDb">Add</button>
+
+			<table id="list" v-if="show">
+				<th>{{ fullName }}</th>
+				<th>{{ numInParty }}</th>
+				<th>{{ going }}</th>
+			</table>
+		</div>
+	</body>
+
+	<script src="https://unpkg.com/vue"></script>
+    <script src="../scripts/main.js"></script>
+</html>
