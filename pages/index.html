@@ -11,17 +11,29 @@
 		<div id="pouchy">
 			<h1>{{ header }}</h1>
 
-			<h5>{{ whatToDo }}</h5>
+			<h3>{{ whatToDo }}</h3>
 
-			<input v-model="name" placeholder="Full Name">
+			<div id="content-centered">
 
-			<button @click="addToDb">Add</button>
+				<input v-model="name" placeholder="Full Name">
 
-			<table id="list" v-if="show">
-				<th>{{ fullName }}</th>
-				<th>{{ numInParty }}</th>
-				<th>{{ going }}</th>
-			</table>
+				<input v-model="partySize" placeholder="Number in Party">
+
+				<button @click="addToDb">Add</button>
+
+				<table>
+					<tr>
+						<th>{{ fullName }}</th>
+						<th>{{ dateRsvpd }}</th>
+						<th>{{ numInParty }}</th>
+					</tr>
+					<tr v-for="entry in entries">
+						<td>{{ entry.fullName }}</td>
+						<td>{{ entry.dateRsvpd }}</td>
+						<td>{{ entry.numInParty }}</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</body>
 
